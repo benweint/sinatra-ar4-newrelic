@@ -1,0 +1,27 @@
+---
+common: &default_settings
+  license_key: <YOUR LICENSE KEY HERE>
+  enabled: true
+  app_name: 'sinatra + active_record 4'
+  log_level: debug
+  ssl: false
+  apdex_t: 1.1
+  capture_params: false
+  transaction_tracer: &70341510672180
+    enabled: true
+    transaction_threshold: 0.0001
+    record_sql: obfuscated
+    stack_trace_threshold: 0.5
+  error_collector: &70341510671020
+    enabled: true
+    capture_source: true
+  beacon: 
+  browser_key: 'browsing'
+development:
+  <<: *default_settings
+test:
+  <<: *default_settings
+staging:
+  <<: *default_settings
+production:
+  <<: *default_settings
